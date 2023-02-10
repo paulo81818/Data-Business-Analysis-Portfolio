@@ -4,7 +4,7 @@
 Hello everyone! My name is Pavel, and this is my portfolio. 
 I have some background in digital marketing and financial data analysis.
 
-You can see more information in my CV.
+You can see more information in my [**CV**](https://github.com/paulo81818/Data-Business-Analysis-Portfolio/blob/main/Data%20Analyst%20CV.pdf).
 
 This repository was created to showcase my skills (Excel, Python, SQL, Power BI, PowerPoint, and others) and my way of analytical thinking.
 ## Contents
