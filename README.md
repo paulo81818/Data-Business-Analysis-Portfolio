@@ -39,6 +39,20 @@ This section contains a list of projects with brief descriptions.
 **Results:** An analysis of financial data on the sale of Adidas products in the USA for 2020 and 2021 was performed. Reports and dashboards were created. 
 ## Study Projects
 ## Certificates
+* [Google Data Analytics Certificate](https://github.com/paulo81818/Data-Business-Analysis-Portfolio/blob/main/Certificates/Google%20Data%20Data%20Analytics.pdf) - Coursera, 2022
+* [IBM Data Analysis with Python](https://github.com/paulo81818/Data-Business-Analysis-Portfolio/blob/main/Certificates/IBM%20data%20analysis%20Python.pdf) - Coursera, 2022
+* [Mastering Data Analysis with Pandas](https://github.com/paulo81818/Data-Business-Analysis-Portfolio/blob/main/Certificates/Data%20analysis%20with%20Pandas.pdf) - Coursera, 2022
+* [Python Data Analysis](https://github.com/paulo81818/Data-Business-Analysis-Portfolio/blob/main/Certificates/Linkedin%20Learning%20Python%20Data%20Analysis.pdf) - Linkedin Learning, 2022
+* [Excel Data Analysis](https://github.com/paulo81818/Data-Business-Analysis-Portfolio/blob/main/Certificates/Linkedin%20Learning%20Excel%20Data%20Analysis.pdf) - Linkedin Learning, 2022
+* [ETL and Data Pipelines with Shell, Airflow and Kafka](https://github.com/paulo81818/Data-Business-Analysis-Portfolio/blob/main/Certificates/ETL%20and%20Data%20Pipelines%20with%20Shell%2C%20Airflow%20and%20Kafka.pdf) - Coursera, 2022
+* [Intermediate SQL: Data Reporting and Analysis](https://github.com/paulo81818/Data-Business-Analysis-Portfolio/blob/main/Certificates/Intermediate%20SQL%20Data%20Reporting%20and%20Analysis.pdf) - Linkedin Learning, 2022
+* [Prepare, Clean, Transform, and Load Data using Power BI](https://github.com/paulo81818/Data-Business-Analysis-Portfolio/blob/main/Certificates/Coursera%20Prepare%2C%20Clean%2C%20Transform%2C%20and%20Load%20Data%20using%20Power%20BI.pdf) - Coursera, 2022
+* [Excel: Working Together with Power Query and Power Pivot](https://github.com/paulo81818/Data-Business-Analysis-Portfolio/blob/main/Certificates/Certificate%20Excel%20Working%20Together%20with%20Power%20Query%20and%20Power%20Pivot.pdf) - Linkedin Learning, 2022
+* [Business Benefits Realization Foundations](https://github.com/paulo81818/Data-Business-Analysis-Portfolio/blob/main/Certificates/Certificate%20Business%20Benefits%20Realization%20Foundations.pdf) - Linkedin Learning, 2023
+* [Business Analyst and Project Manager Collaboration](https://github.com/paulo81818/Data-Business-Analysis-Portfolio/blob/main/Certificates/Certificate%20Business%20Analyst%20and%20Project%20Manager%20Collaboration.pdf) - Linkedin Learning, 2023
+* [Business Analysis Foundations](https://github.com/paulo81818/Data-Business-Analysis-Portfolio/blob/main/Certificates/Certificate%20Business%20Analysis%20Foundations.pdf) - Linkedin Learning, 2023
+* [Agile Requirements Foundations](https://github.com/paulo81818/Data-Business-Analysis-Portfolio/blob/main/Certificates/Certificate%20Agile%20Requirements%20Foundations.pdf) - Linkedin Learning, 2023
+
 ## Contacts
 * Linkedin: https://www.linkedin.com/in/pavelliaoshka
 * Email: pavelliaoshka818@gmail.com
