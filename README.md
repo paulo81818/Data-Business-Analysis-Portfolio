@@ -35,7 +35,7 @@ This section contains a list of projects with brief descriptions.
 **Original dataset:** <a href = "https://github.com/paulo81818/Data-Business-Analysis-Portfolio/blob/main/Adidas%20US%20Sales%20Analysis/Original-dataset.xlsx">
   <code>adidas-us-sales.xlsx</code></a><br>
 **Skills:** analytical thinking, data cleaning, data analysis, data vizualization <br>
-**Hard skills:** Excel, Formulas, Functions, Charts, Dashboards, Slices.<br>
+**Hard skills:** Excel, Pivot Tables, Formulas, Functions, Charts, Dashboards, Slices.<br>
 **Results:** An analysis of financial data on the sale of Adidas products in the USA for 2020 and 2021 was performed. Reports and dashboards were created. 
 ## Study Projects
 ## Certificates
