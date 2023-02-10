@@ -19,18 +19,18 @@ This repository was created to showcase my skills (Excel, Python, SQL, Power BI,
 List of projects with brief descriptions.
 ### German cars data analysis 
 **Description:** <br>
-Code:
-Presentation:
-Original dataset:
-Skills:
-Hard skills: 
-Results:
-Adidas US sales data analysis
-Description:
-Excel file:
-Original dataset:
-Skills:
-Hard skills: 
-Results: 
+**Code:** <br>
+**Presentation:** <br>
+**Original dataset:** <br>
+**Skills:** <br>
+**Hard skills:** <br>
+**Results:** <br>
+### Adidas US sales data analysis
+**Description:** <br>
+**Excel file:** <br>
+**Original dataset:** <br>
+**Skills:** <br>
+**Hard skills:** <br>
+**Results:** <br>
 ## Study Projects
 ## Certificates
