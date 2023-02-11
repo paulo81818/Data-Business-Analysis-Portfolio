@@ -12,6 +12,11 @@ This repository was created to showcase my skills (Excel, Python, SQL, Power BI,
   - [German cars data analysis](#german-cars-data-analysis) 
   - [Adidas US sales data analysis](#adidas-us-sales-data-analysis)
 * [Study projects](#study-projects)
+  - [Python Data Analysis](#python-data-analysis)
+  - [Excel Exercises](#excel-exercises)
+  - [R Exercises](#r-exercises)
+  - [SQL Exercises](#sql-exercises)
+  - [ETL pipelines project](#etl-pipelines-project)
 * [Certificates](#certificates)
 * [Contacts](#contacts)
 ## Portfolio Projects
@@ -38,6 +43,34 @@ This section contains a list of projects with brief descriptions.
 **Hard skills:** Excel, Pivot Tables, Formulas, Functions, Charts, Dashboards, Slices.<br>
 **Results:** An analysis of financial data on the sale of Adidas products in the USA for 2020 and 2021 was performed. Reports and dashboards were created. 
 ## Study Projects
+### Python Data Analysis
+**Repository:** <a href = "https://github.com/paulo81818/Study-Projects/tree/main/Data-Analysis-Python">
+  <code>python-data-analysis</code></a> <br> 
+**Description:** This repository contains ipynb files with tasks that were completed during the Python Data Analysis course on LinkedIn Learning. The main goal is to improve Python's analytical abilities. <br>
+**Skills:** Python, Pandas, NumPy, Matplotlib, Data Analysis, Data Visualization <br>
+**Status:** Completed in 2022
+### Excel Exercises
+**Repository:** <a href = "https://github.com/paulo81818/Study-Projects/tree/main/Excel%20Exercises">
+  <code>excel-data-analysis</code></a> <br>
+**Description:** This repository contains xlsx files with completed tasks from the Excel Data Analysis course on LinkedIn Learning. The main goal is to advance knowledge in spreadsheets and statistical analysis. <br>
+**Skills:** Excel, Formulas, Functions, Data Analysis, Statistical Analysis. <br>
+**Status:** Completed in 2022
+### R Exercises
+**Repository:** <a href = "https://github.com/paulo81818/Study-Projects/tree/main/R%20Exercises">
+  <code>r-data-analysis</code></a> <br>
+**Description:** <br>
+**Skills:** R programming language, Data Analysis, Data Visualization. <br> 
+**Status:** Completed in 2022
+### SQL Exercises
+**Repository:** <br>
+**Description:** <br>
+**Skills:** <br>
+**Status:** Completed in 2022
+### ETL pipelines project
+**Repository:** <br>
+**Description:** <br>
+**Skills:** <br> 
+**Status:** Completed in 2022
 ## Certificates
 * [Google Data Analytics Certificate](https://github.com/paulo81818/Data-Business-Analysis-Portfolio/blob/main/Certificates/Google%20Data%20Data%20Analytics.pdf) - Coursera, 2022
 * [IBM Data Analysis with Python](https://github.com/paulo81818/Data-Business-Analysis-Portfolio/blob/main/Certificates/IBM%20data%20analysis%20Python.pdf) - Coursera, 2022
