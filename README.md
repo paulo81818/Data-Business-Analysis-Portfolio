@@ -1,11 +1,12 @@
 # Pavel Liaoshka - Data Analysis portfolio
 ## About me
 Hello everyone! My name is Pavel, and this is my portfolio.<br>
-I have some background in digital marketing and financial data analysis.
+I love investigating different types of data, discovering insights, and representing it with beautiful visuals.<br>
+I have a background in digital marketing and financial data analysis.<br>
 
 You can see more information in my [**CV**](https://github.com/paulo81818/Data-Business-Analysis-Portfolio/blob/main/Data%20Analyst%20CV.pdf).
 
-This repository was created to showcase my skills (Excel, Python, SQL, Power BI, PowerPoint, and others) and my way of analytical thinking.
+This repository was created to showcase my analytical and technical skills (Excel, Python, SQL, Power BI, PowerPoint, and others).
 ## Contents
 * [About me](#about-me)
 * [Portfolio Projects](#portfolio-projects)
@@ -34,14 +35,16 @@ This section contains a list of projects with brief descriptions.
 **Hard skills:** MS PowerPoint, Python: Pandas, NumPy, Mathplotlib, Seaborn. <br>
 **Results:** An analysis of a dataset containing information about cars posted on AutoScaut 24 was conducted. Some insights were found, visualized, and included in the presentation.
 ### Adidas US sales data analysis
-**Description:** The goal of this project is to use Excel functionality to analyze data about Adidas's product sales in the United States, which contain information in 9652 rows and 14 columns for the fiscal years 2020 and 2021. Visualize data, prepare different types of reports and dashboards. <br>
-**Excel file:** <a href = "">
-  <code>adidas-sales-data-analysis.xlsx</code></a><br>
+**Description:** The goal of this project is to use Excel functionality to analyze data about Adidas's product sales in the United States, which contain information in 9652 rows and 14 columns for the fiscal years 2020 and 2021. Visualize data, prepare different types of reports and interactive dashboard. <br>
+**Reports and conclusions:** <a href = "https://github.com/paulo81818/Data-Business-Analysis-Portfolio/blob/main/Adidas%20US%20Sales%20Analysis/Adidas%20Sales%20Analysis%20with%20reports.xlsx">
+  <code>adidas-sales-data-analysis.xlsx</code></a> <br>
+**Dashboard:** <a href = "https://github.com/paulo81818/Data-Business-Analysis-Portfolio/blob/main/Adidas%20US%20Sales%20Analysis/Dashboard.xlsx">
+  <code>adidas-sales-dashboard.xlsx</code></a> <br>
 **Original dataset:** <a href = "https://github.com/paulo81818/Data-Business-Analysis-Portfolio/blob/main/Adidas%20US%20Sales%20Analysis/Original-dataset.xlsx">
   <code>adidas-us-sales.xlsx</code></a><br>
-**Skills:** analytical thinking, data cleaning, data analysis, data vizualization <br>
-**Hard skills:** Excel, Pivot Tables, Formulas, Functions, Charts, Dashboards, Slices.<br>
-**Results:** An analysis of financial data on the sale of Adidas products in the USA for 2020 and 2021 was performed. Reports and dashboards were created. 
+**Skills:** analytical thinking, data cleaning, data analysis, data vizualization.<br>
+**Hard skills:** Excel, Pivot Tables, Formulas, Functions, Charts, Dashboards, Slices, Pivot Charts.<br>
+**Results:** An analysis of financial data on the sale of Adidas products in the USA for 2020 and 2021 was performed. Reports and dashboard were created. 
 ## Study Projects
 ### Python Data Analysis
 **Repository:** <a href = "https://github.com/paulo81818/Study-Projects/tree/main/Data-Analysis-Python">
@@ -58,7 +61,7 @@ This section contains a list of projects with brief descriptions.
 ### R Exercises
 **Repository:** <a href = "https://github.com/paulo81818/Study-Projects/tree/main/R%20Exercises">
   <code>r-data-analysis</code></a> <br>
-**Description:** <br>
+**Description:** This repository contains some completed exercises with R practice. The main goal is to gain basic knowledge of the R programming language and its use for data analysis and visualization.<br>
 **Skills:** R programming language, Data Analysis, Data Visualization. <br> 
 **Status:** Completed in 2022
 ### SQL Exercises
