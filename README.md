@@ -65,14 +65,16 @@ This section contains a list of projects with brief descriptions.
 **Skills:** R programming language, Data Analysis, Data Visualization. <br> 
 **Status:** Completed in 2022
 ### SQL Exercises
-**Repository:** <br>
-**Description:** <br>
-**Skills:** <br>
+**Repository:** <a href = "https://github.com/paulo81818/Study-Projects/tree/main/SQL%20Exercises">
+  <code>sql-queries</code></a> <br>
+**Description:** This repository contains SQL queries that I was writing to accomplish different tasks during different courses. The main goal is to improve SQL knowledge and fluency. <br>
+**Skills:** SQL, Queries, data analysis, data cleaning <br>
 **Status:** Completed in 2022
 ### ETL pipelines project
-**Repository:** <br>
+**Repository:** <a href = "https://github.com/paulo81818/Study-Projects/tree/main/ETL%20pipelines%20project">
+  <code>etl-pipelines</code></a><br>
 **Description:** <br>
-**Skills:** <br> 
+**Skills:** Bash, Apache Airflow, Kafka <br> 
 **Status:** Completed in 2022
 ## Certificates
 * [Google Data Analytics Certificate](https://github.com/paulo81818/Data-Business-Analysis-Portfolio/blob/main/Certificates/Google%20Data%20Data%20Analytics.pdf) - Coursera, 2022
