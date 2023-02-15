@@ -73,7 +73,7 @@ This section contains a list of projects with brief descriptions.
 ### ETL pipelines project
 **Repository:** <a href = "https://github.com/paulo81818/Study-Projects/tree/main/ETL%20pipelines%20project">
   <code>etl-pipelines</code></a><br>
-**Description:** <br>
+**Description:** This repository contains screenshots of the final project in the ETL and Data Pipelines with Shell, Airflow, and Kafka. Main goal: create data pipelines using Apache Airflow, Bash commands, and Kafka.<br>
 **Skills:** Bash, Apache Airflow, Kafka <br> 
 **Status:** Completed in 2022
 ## Certificates
