@@ -196,6 +196,38 @@ WHERE
     state != 'West Virginia' 
 
 
+/* Inspect city column */
+SELECT 
+    city,
+    COUNT(city) AS counts,
+    state
+FROM `myproject8888-357816.real_estate_us.re_us1` 
+GROUP BY city, state
+ORDER BY counts DESC
+
+
+SELECT 
+    city,
+    COUNT(city) AS counts,
+    state
+FROM `myproject8888-357816.real_estate_us.re_us1`
+WHERE city LIKE 'N%' AND state = 'New York'
+GROUP BY city, state
+ORDER BY counts DESC
+
+
+SELECT 
+    city,
+    COUNT(city) AS counts,
+    REPLACE(REPLACE(REPLACE(city, 'New York City', 'New York'),'Nyc', 'New York'), 'Ny', 'New York') AS ny,
+    state
+FROM `myproject8888-357816.real_estate_us.re_us1`
+WHERE city LIKE 'N%' AND state = 'New York'
+GROUP BY city, state
+ORDER BY counts DESC
+
+
+
 /* Create second table only with not null values in the 'sold_date' column */
 
 CREATE OR REPLACE TABLE `myproject8888-357816.real_estate_us.re_us_sold`
