@@ -1,5 +1,5 @@
 /* Data cleaning using SQL
-Skills used: CREATE, GROUP BY, ORDER BY, COUNT, DISTINCT, Remove duplicates, inadequate, and unnecessary data.*/
+Skills used: CREATE, GROUP BY, ORDER BY, REPLACE, COUNT, DISTINCT, Remove duplicates, inadequate, and unnecessary data.*/
 
 
 ----------------------------------------------------------------------------------
