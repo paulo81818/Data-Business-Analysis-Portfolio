@@ -1,4 +1,5 @@
-/* Data cleaning using SQL */
+/* Data cleaning using SQL
+Skills used: CREATE, GROUP BY, ORDER BY, COUNT, DISTINCT, Remove duplicates, inadequate, and unnecessary data.*/
 
 
 ----------------------------------------------------------------------------------
@@ -69,19 +70,20 @@ WHERE
     status = 'ready_to_build' AND 
     sold_date IS NOT NULL
 
-/* Status column contains 2 distinct values and most of them are 'for sale' - 113512
-. All rows with 'ready_to_build'(277 rows) have no sold date.*/
+/* The Status column has two distinct values, the majority of which are "for_sale" (113512).
+There is no 'sold date' for any of the rows with "ready_to_build" (277 rows). Later, we will exclude 'ready_to_build' rows from our analysis,
+because they are now actually existing buildings.  */
     
 
 
 /*Check bed column*/
 
 SELECT 
-    bed,
-    COUNT(bed) as count_bed
+    bedrooms,
+    COUNT(bedrooms) as count_bed
 FROM 
     `myproject8888-357816.real_estate_us.re-us` 
-GROUP BY bed
+GROUP BY bedrooms
 ORDER BY count_bed DESC
 
 
@@ -90,7 +92,7 @@ SELECT
     *
 FROM 
     `myproject8888-357816.real_estate_us.re_us1` 
-WHERE bed > 11
+WHERE bedrooms > 11
 
 
 
@@ -107,5 +109,100 @@ There aren't many rows like this. We will leave it as is. 17516 with null values
 
 /* Check the other columns */ 
 
+SELECT 
+    bathrooms,
+    COUNT(bathrooms) as count_bath
+FROM 
+    `myproject8888-357816.real_estate_us.re_us1` 
+GROUP BY bathrooms
+ORDER BY count_bath DESC
+
+SELECT 
+    *
+FROM 
+    `myproject8888-357816.real_estate_us.re_us1` 
+WHERE bathrooms > 12
+
+SELECT 
+    *
+FROM 
+    `myproject8888-357816.real_estate_us.re_us1` 
+WHERE bathrooms IS NULL
+
+/* 16297 null values in the bathrooms column. Enormously high values (more than 11) in the bathroom column in 210 rows.
+There are more bathrooms than bedrooms in these rows. Maybe it's a mistake. But we don't know exactly; it's not the goal of our analysis right now.
+And it will not skew the results; we will leave it as it is. */
 
 
+SELECT
+    *
+FROM `myproject8888-357816.real_estate_us.re_us1` 
+WHERE state IS NULL
+
+
+
+SELECT
+    state,
+    COUNT(state) AS counts
+FROM `myproject8888-357816.real_estate_us.re_us1` 
+GROUP BY state
+ORDER BY counts DESC
+
+
+/* There are no null values in the "state" column. 
+Virginia (7), Georgia (5), South Carolina, Tennessee, Wyoming, and West Virginia (1) have a low quantity of rows. 
+We will exclude them from our analysis. */
+
+
+
+SELECT
+    *
+FROM 
+    `myproject8888-357816.real_estate_us.re_us1` 
+WHERE 
+    sold_date IS NULL
+ 
+ 
+ /* There are 54092 null values in the "sold_date" column. These rows cannot be used for time-series analysis.
+So, let's create two tables: one for analysis by time periods and prediction, and another for the basic exploration. */
+
+
+
+/* Remove the states of Virginia, Georgia, South Carolina, Tennessee, Wyoming, and West Virginia; "ready_to_build' status. 
+Drop the status, full_address, and zipcode columns.
+I use CREATE OR DROP TABLE because DML is not available in the Bigquery Sandbox. */
+
+CREATE OR REPLACE TABLE `myproject8888-357816.real_estate_us.re_us1`
+AS
+SELECT
+    state,
+    city,
+    street,
+    price,
+    bedrooms,
+    bathrooms,
+    acre_lot,
+    house_size,
+    sold_date
+FROM 
+    `myproject8888-357816.real_estate_us.re_us1` 
+WHERE 
+    status != 'ready_to_build' AND
+    state != 'Virginia'AND
+    state != 'Georgia' AND
+    state != 'South Carolina' AND
+    state != 'Tennessee' AND
+    state != 'Wyoming' AND
+    state != 'West Virginia' 
+
+
+/* Create second table only with not null values in the 'sold_date' column */
+
+CREATE OR REPLACE TABLE `myproject8888-357816.real_estate_us.re_us_sold`
+AS
+SELECT 
+    *
+FROM 
+    `myproject8888-357816.real_estate_us.re_us1` 
+WHERE
+    sold_date IS NOT NULL
