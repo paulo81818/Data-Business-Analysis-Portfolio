@@ -46,7 +46,8 @@ SELECT
     CAST(zip_code AS STRING) AS zipcode, 
     house_size,
     sold_date
-FROM`myproject8888-357816.real_estate_us.re_us1` 
+FROM
+    `myproject8888-357816.real_estate_us.re_us1` 
     
     
     
@@ -56,7 +57,8 @@ SELECT
     COUNT(status)
 FROM 
     `myproject8888-357816.real_estate_us.re_us1` 
-GROUP BY status
+GROUP BY 
+    status
 
 
 
@@ -83,8 +85,10 @@ SELECT
     COUNT(bedrooms) as count_bed
 FROM 
     `myproject8888-357816.real_estate_us.re-us` 
-GROUP BY bedrooms
-ORDER BY count_bed DESC
+GROUP BY 
+    bedrooms
+ORDER BY
+    count_bed DESC
 
 
 
@@ -92,7 +96,8 @@ SELECT
     *
 FROM 
     `myproject8888-357816.real_estate_us.re_us1` 
-WHERE bedrooms > 11
+WHERE 
+    bedrooms > 11
 
 
 
@@ -100,7 +105,8 @@ SELECT
     *
 FROM 
     `myproject8888-357816.real_estate_us.re_us1` 
-WHERE bedrooms IS NULL
+WHERE 
+    bedrooms IS NULL
 
 /* Here are some rows with an enormously high quantity of bedrooms; for example, 123 is the maximum value. However, a portion of the rows do not have a null sold_date.
 There aren't many rows like this. We will leave it as is. 17516 with null values in this column */
@@ -114,8 +120,10 @@ SELECT
     COUNT(bathrooms) as count_bath
 FROM 
     `myproject8888-357816.real_estate_us.re_us1` 
-GROUP BY bathrooms
-ORDER BY count_bath DESC
+GROUP BY
+    bathrooms
+ORDER BY
+    count_bath DESC
 
 SELECT 
     *
@@ -127,7 +135,8 @@ SELECT
     *
 FROM 
     `myproject8888-357816.real_estate_us.re_us1` 
-WHERE bathrooms IS NULL
+WHERE 
+    bathrooms IS NULL
 
 /* 16297 null values in the bathrooms column. Enormously high values (more than 11) in the bathroom column in 210 rows.
 There are more bathrooms than bedrooms in these rows. Maybe it's a mistake. But we don't know exactly; it's not the goal of our analysis right now.
@@ -136,17 +145,22 @@ And it will not skew the results; we will leave it as it is. */
 
 SELECT
     *
-FROM `myproject8888-357816.real_estate_us.re_us1` 
-WHERE state IS NULL
+FROM 
+    `myproject8888-357816.real_estate_us.re_us1` 
+WHERE 
+    state IS NULL
 
 
 
 SELECT
     state,
     COUNT(state) AS counts
-FROM `myproject8888-357816.real_estate_us.re_us1` 
-GROUP BY state
-ORDER BY counts DESC
+FROM 
+    `myproject8888-357816.real_estate_us.re_us1` 
+GROUP BY 
+    state
+ORDER BY 
+    counts DESC
 
 
 /* There are no null values in the "state" column. 
@@ -202,8 +216,11 @@ SELECT
     COUNT(city) AS counts,
     state
 FROM `myproject8888-357816.real_estate_us.re_us1` 
-GROUP BY city, state
-ORDER BY counts DESC
+GROUP BY 
+   city, 
+   state
+ORDER BY 
+    counts DESC
 
 
 SELECT 
@@ -215,18 +232,85 @@ WHERE city LIKE 'N%' AND state = 'New York'
 GROUP BY city, state
 ORDER BY counts DESC
 
+
+
+/*There are different spellings of New York(New York City, Ny, Nyc). Let's fix it */
 
 SELECT 
     city,
     COUNT(city) AS counts,
     REPLACE(REPLACE(REPLACE(city, 'New York City', 'New York'),'Nyc', 'New York'), 'Ny', 'New York') AS ny,
     state
-FROM `myproject8888-357816.real_estate_us.re_us1`
-WHERE city LIKE 'N%' AND state = 'New York'
-GROUP BY city, state
-ORDER BY counts DESC
+FROM
+    `myproject8888-357816.real_estate_us.re_us1`
+WHERE 
+    city LIKE 'N%' AND state = 'New York'
+GROUP BY 
+    city, 
+    state
+ORDER BY 
+    counts DESC
 
 
+CREATE OR REPLACE TABLE
+    `myproject8888-357816.real_estate_us.re_us1`
+AS
+SELECT
+    state, 
+    REPLACE(REPLACE(REPLACE(city, 'New York City', 'New York'),'Nyc', 'New York'), 'Ny', 'New York') AS city,
+    street,
+    price, 
+    bedrooms,
+    bathrooms,
+    acre_lot, 
+    house_size,
+    sold_date
+FROM 
+    `myproject8888-357816.real_estate_us.re_us1`
+
+
+
+/* Fixing 23 null values in the "city" column */
+
+SELECT 
+    *
+FROM 
+    `myproject8888-357816.real_estate_us.re_us1`
+WHERE
+    city IS NULL
+    
+    
+
+CREATE OR REPLACE TABLE `myproject8888-357816.real_estate_us.re_us2`
+AS
+SELECT 
+    state,
+CASE
+    WHEN street IN ('163 Union and Mt Wash Ea','155-A La Vallee Nb','123 Catherines Hope Eb', '21 N Grapetree Eb', '42 43 Shoys Ea', '8-B Teagues Bay Eb', '242 Union and Mt Wash Ea', '96 Hard Labor Pr')  AND city IS NULL 
+    THEN 'Christiansted'
+    WHEN street IN ('4 Prosperity Nb', '20 River Pr', '17 Prosperity Nb', '94V I Corp Lands Pr', '14 Diamond Pr', '192 La Vallee Nb')  AND city IS NULL THEN 'Frederiksted'
+    WHEN street IN ('240 St John Qu') AND city IS NULL THEN 'Saint John'
+    WHEN street IN ('230 S Stevens Ave') AND city IS NULL THEN 'South Amboy'
+    WHEN street IN ('0 Block 32 Quinton Alloway Quinton Rd Lot 11 01') AND city IS NULL THEN 'Quinton'
+    WHEN street = '641 State Route 82' AND city IS NULL THEN 'Hopewell Junction'
+    WHEN street = '32 Devereux Dr' AND city IS NULL THEN 'Manchester Township'
+    WHEN street = '9-11 Putnam Park Rd' AND city IS NULL THEN 'Bethel'
+    WHEN street = '68 Avondale St' AND city IS NULL THEN 'Valley Stream'
+    WHEN street = '824-26 Berckman St' AND city IS NULL THEN 'Plainfield'
+    WHEN street = '689 Luis M Marin Blvd Unit 1009' AND city IS NULL THEN 'Jersey City'
+    ELSE city
+END AS city,
+    street,
+    price, 
+    bedrooms,
+    bathrooms,
+    acre_lot, 
+    house_size,
+    sold_date    
+FROM 
+    `myproject8888-357816.real_estate_us.re_us1`
+
+    
 
 /* Create second table only with not null values in the 'sold_date' column */
 
@@ -235,6 +319,6 @@ AS
 SELECT 
     *
 FROM 
-    `myproject8888-357816.real_estate_us.re_us1` 
+    `myproject8888-357816.real_estate_us.re_us2` 
 WHERE
     sold_date IS NOT NULL
