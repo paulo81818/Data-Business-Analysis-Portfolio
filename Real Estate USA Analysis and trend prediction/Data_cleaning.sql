@@ -269,7 +269,7 @@ FROM
 
 
 
-/* Fixing 23 null values in the "city" column */
+/* Fixing 23 null values in the "city" column and add excract year from 'sold_date' */
 
 SELECT 
     *
@@ -305,12 +305,12 @@ END AS city,
     bathrooms,
     acre_lot, 
     house_size,
-    sold_date    
+    sold_date,
+    EXTRACT(YEAR FROM sold_date) AS year
 FROM 
     `myproject8888-357816.real_estate_us.re_us1`
 
     
-
 /* Create second table only with not null values in the 'sold_date' column */
 
 CREATE OR REPLACE TABLE `myproject8888-357816.real_estate_us.re_us_sold`
