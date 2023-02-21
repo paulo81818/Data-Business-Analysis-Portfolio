@@ -1,7 +1,6 @@
 /* Data cleaning using SQL
 Skills used: CREATE, GROUP BY, ORDER BY, REPLACE, CASE, Remove duplicates, inadequate, and unnecessary data.*/
 
-
 ----------------------------------------------------------------------------------
 
 /*First look at the dataset*/
