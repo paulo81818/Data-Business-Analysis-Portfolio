@@ -269,7 +269,8 @@ FROM
 
 
 
-/* Fixing 23 null values in the "city" column and add excract year from 'sold_date' */
+/* Fixing 23 null values in the "city" column and add excract year from 'sold_date'. 
+Checking null and suspiciously low values values(51 rows) is 'price' column and removing them  */
 
 SELECT 
     *
@@ -278,7 +279,24 @@ FROM
 WHERE
     city IS NULL
     
+
+SELECT 
+    *
+FROM 
+    `myproject8888-357816.real_estate_us.re_us2`
+WHERE 
+    price IS NULL
     
+    
+    
+SELECT 
+    *
+FROM 
+    `myproject8888-357816.real_estate_us.re_us2`
+WHERE 
+    price < 5000
+
+
 
 CREATE OR REPLACE TABLE `myproject8888-357816.real_estate_us.re_us2`
 AS
@@ -309,6 +327,8 @@ END AS city,
     EXTRACT(YEAR FROM sold_date) AS year
 FROM 
     `myproject8888-357816.real_estate_us.re_us1`
+WHERE 
+    price > 5000
 
     
 /* Create second table only with not null values in the 'sold_date' column */
