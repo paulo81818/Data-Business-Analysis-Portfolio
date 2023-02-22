@@ -330,6 +330,42 @@ FROM
 WHERE 
     price > 5000
 
+
+/* Create house_size_m2 and hectare_lot columns.
+Replace incorrect highest value, update new highest value according to realtor.com data */
+
+
+SELECT
+    *
+FROM 
+    `myproject8888-357816.real_estate_us.re_us2`
+ORDER BY 
+    price DESC
+    
+    
+    
+SELECT 
+    state,
+    city,
+    street,
+    CASE 
+        WHEN street = '952 E 223 St Units 4858 & 66' AND price = 875000000 THEN 850000
+        WHEN street = '432 Park Ave Unit Penthouse' AND price = 169000000 Then 180000000
+        ELSE price
+    END AS price,
+    bedrooms,
+    bathrooms,
+    acre_lot,
+    acre_lot*0.404686 AS hectare_lot,
+    house_size,
+    house_size/10.7639 AS house_size_m2,
+    sold_date 
+FROM 
+    `myproject8888-357816.real_estate_us.re_us2`
+ORDER BY 
+    price DESC
+    
+    
     
 /* Create second table only with not null values in the 'sold_date' column */
 
