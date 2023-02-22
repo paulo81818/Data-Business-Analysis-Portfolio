@@ -332,7 +332,8 @@ WHERE
 
 
 /* Create house_size_m2 and hectare_lot columns.
-Replace incorrect highest value, update new highest value according to realtor.com data */
+Replace incorrect highest value, update new highest value according to realtor.com data.
+Change info about property with adress information 421 W 250th St (complex way, because DML language and UPDATE is not available in the Bigquery sandbox) */
 
 
 SELECT
@@ -343,23 +344,40 @@ ORDER BY
     price DESC
     
     
-    
+CREATE OR UPDATE TABLE `myproject8888-357816.real_estate_us.re_us2`
+AS
 SELECT 
     state,
-    city,
+    CASE 
+        WHEN street = '421 W 250th St' AND city = 'New York' THEN 'Bronx'
+        ELSE city
+    END AS city,
     street,
     CASE 
         WHEN street = '952 E 223 St Units 4858 & 66' AND price = 875000000 THEN 850000
         WHEN street = '432 Park Ave Unit Penthouse' AND price = 169000000 Then 180000000
+        WHEN street = '421 W 250th St' AND price = 120000000 THEN 8750000
         ELSE price
     END AS price,
-    bedrooms,
-    bathrooms,
+    CASE 
+        WHEN street = '421 W 250th St' AND bedrooms = 123 THEN 8
+        ELSE bedrooms
+    END AS bedrooms,
+    CASE 
+        WHEN street = '421 W 250th St' AND bathrooms = 123 THEN 10
+        ELSE bathrooms
+    END AS bathrooms,
     acre_lot,
     acre_lot*0.404686 AS hectare_lot,
-    house_size,
+    CASE 
+        WHEN street = '421 W 250th St' AND house_size IS NULL THEN 11135
+        ELSE house_size
+    END AS house_size,
     house_size/10.7639 AS house_size_m2,
-    sold_date 
+    CASE 
+        WHEN street = '421 W 250th St' AND sold_date = '2012-06-29' THEN NULL
+        ELSE sold_date 
+    END AS sold_date 
 FROM 
     `myproject8888-357816.real_estate_us.re_us2`
 ORDER BY 
