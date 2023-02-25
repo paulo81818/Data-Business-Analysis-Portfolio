@@ -499,9 +499,38 @@ WHERE
     rn = 1 
 ORDER BY price DESC
 
+
 /* Also, we need to separate plots of land from property for our analysis. */ 
 
+CREATE OR REPLACE TABLE 
+    `myproject8888-357816.real_estate_us.re_us_noduplicates`
+AS
+SELECT 
+    ROW_NUMBER() OVER(ORDER BY price DESC) AS id,
+    state, 
+    city,
+    street,
+    price,
+    bedrooms,
+    bathrooms, 
+    acre_lot,
+    house_size,
+    sold_date
+FROM 
+    `myproject8888-357816.real_estate_us.re_us_noduplicates`
 
+
+
+SELECT
+    *
+FROM 
+    `myproject8888-357816.real_estate_us.re_us_noduplicates` 
+WHERE
+    id NOT IN (SELECT id From `myproject8888-357816.real_estate_us.re_us_noduplicates` WHERE bedrooms = 0 AND bathrooms = 0 AND acre_lot != '0' AND house_size = '0')
+ORDER BY 
+    price DESC
+    
+/* CHECK all nulls in 4 columns!!!!!!
     
 /* Create second table only with not null values in the 'sold_date' column */
 
