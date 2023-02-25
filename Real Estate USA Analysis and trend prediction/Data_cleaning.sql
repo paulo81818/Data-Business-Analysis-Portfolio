@@ -382,8 +382,126 @@ FROM
     `myproject8888-357816.real_estate_us.re_us2`
 ORDER BY 
     price DESC
-    
-    
+
+
+/* Here are some more duplicates with slightly different street column values but the same other columns. We need to solve this */
+
+SELECT 
+    DISTINCT  
+    state,
+    city,
+    price,
+    bedrooms,
+    bathrooms,
+    acre_lot,
+    house_size,
+    sold_date   
+FROM 
+    `myproject8888-357816.real_estate_us.re_us2`
+ORDER BY 
+    price DESC
+ 
+/* There are 111016 Distinct rows excluding street column */
+
+/* Check the duplicate rows to decide how to treat them. */
+
+SELECT
+    *
+FROM 
+    `myproject8888-357816.real_estate_us.re_us4`  a
+JOIN (SELECT state,
+    city,
+    price,
+    IFNULL(bedrooms, 0) AS bedrooms,
+    IFNULL(bathrooms, 0) AS bathrooms,
+    IFNULL(acre_lot, 0) AS acre_lot,
+    IFNULL(house_size, 0) AS house_size,
+    COUNT(*)
+FROM `myproject8888-357816.real_estate_us.re_us4`
+GROUP BY state,
+    city,
+    price,
+    bedrooms,
+    bathrooms, 
+    acre_lot,
+    house_size
+HAVING COUNT(*) > 1) b
+ON a.state = b.state
+AND a.city = b.city 
+AND a.price = b.price 
+AND a.bedrooms = b.bedrooms 
+AND a.bathrooms = b.bathrooms 
+AND a.acre_lot = b.acre_lot 
+AND a.house_size = b.house_size
+ORDER BY 
+a.price
+
+/* With a few exceptions, we can tell from the web information about duplicate row addresses that the majority of them are the same property. 
+We can remove this duplicates
+But it's necessary to check rows where bedrooms, bathrooms, acre_lot, house_size are nulls to see if they are the same.*/ 
+/* Create a table with the changed datatypes and replaced null values. */
+
+CREATE OR REPLACE TABLE 
+    `myproject8888-357816.real_estate_us.re_us5`
+AS
+SELECT 
+    state,
+    city,
+    street,
+    CAST(price AS INT64) AS price,
+    IFNULL(bedrooms, 0) AS bedrooms,
+    IFNULL(bathrooms, 0) AS bathrooms,
+    IFNULL(CAST(acre_lot AS STRING), '0') AS acre_lot,
+    IFNULL(CAST(house_size AS STRING), '0') AS house_size,
+    IFNULL(CAST(sold_date AS STRING), '0') AS sold_date,  
+FROM 
+    `myproject8888-357816.real_estate_us.re_us4`
+
+
+WITH cte AS (
+  SELECT *, 
+     row_number() OVER(PARTITION BY state,
+    city,
+    price,
+    bedrooms,
+    bathrooms, 
+    acre_lot,
+    house_size,
+    sold_date ORDER BY price DESC) AS rn
+  FROM `myproject8888-357816.real_estate_us.re_us5`
+)
+Select * from cte WHERE rn > 1 AND bedrooms = 0 AND bathrooms = 0 AND acre_lot = '0' AND house_size = '0'
+
+/* 33 rows with null in bedrooms, bathrooms, acre_lot, house_size columns at the same time. 
+Part of them are different plots of land, and another part are the duplicate properties. We can remove duplicates here. */
+
+
+CREATE OR REPLACE TABLE `myproject8888-357816.real_estate_us.re_us_noduplicates`
+AS
+WITH CTE AS (
+  SELECT *, 
+    row_number() OVER(PARTITION BY state,
+    city,
+    price,
+    bedrooms,
+    bathrooms, 
+    acre_lot,
+    house_size,
+    sold_date ORDER BY price DESC) AS rn
+FROM 
+    `myproject8888-357816.real_estate_us.re_us5`
+)
+SELECT 
+    * 
+FROM 
+    CTE 
+WHERE 
+    rn = 1 
+ORDER BY price DESC
+
+/* Also, we need to separate plots of land from property for our analysis. */ 
+
+
     
 /* Create second table only with not null values in the 'sold_date' column */
 
