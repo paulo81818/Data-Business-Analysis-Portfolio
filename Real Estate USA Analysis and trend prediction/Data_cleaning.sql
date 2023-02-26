@@ -530,8 +530,28 @@ WHERE
 ORDER BY 
     price DESC
     
-/* CHECK all nulls in 4 columns!!!!!!
-    
+/* Check columns with nulls in bedrooms, bathrooms, acre_lot, house_size4 columns*/
+
+WITH cte AS (
+  SELECT *, 
+     row_number() OVER(PARTITION BY state,
+    city,
+    price,
+    bedrooms,
+    bathrooms, 
+    acre_lot,
+    house_size,
+    sold_date ORDER BY price DESC) AS rn
+  FROM `myproject8888-357816.real_estate_us.re_us5`
+)
+Select * from cte WHERE bedrooms = 0 AND bathrooms = 0 AND acre_lot = '0' AND house_size = '0'
+ORDER BY price DESC
+
+/* There are 552 such rows. Most of them are properties. Maybe all this information was just skipped while entering data.
+Leave these rows in our property data. */
+
+/* Change datatypes, add columns */
+
 /* Create second table only with not null values in the 'sold_date' column */
 
 CREATE OR REPLACE TABLE `myproject8888-357816.real_estate_us.re_us_sold`
@@ -542,3 +562,21 @@ FROM
     `myproject8888-357816.real_estate_us.re_us2` 
 WHERE
     sold_date IS NOT NULL
+
+
+/* Create a table with plots. 
+But we need to do more exploration of this data to be sure that this table contains actual information about plots. */
+
+CREATE OR REPLACE TABLE
+    `myproject8888-357816.real_estate_us.re_us_plots`
+AS
+SELECT
+    state,
+    city,
+    street,
+    price,
+    CAST(acre_lot AS FLOAT64) AS acre_lot,
+    sold_date
+  FROM `myproject8888-357816.real_estate_us.re_us5`
+WHERE bedrooms = 0 AND bathrooms = 0 AND acre_lot != '0' AND house_size = '0'
+ORDER BY price DESC
