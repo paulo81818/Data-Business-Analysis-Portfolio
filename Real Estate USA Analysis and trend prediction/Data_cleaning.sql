@@ -552,6 +552,23 @@ Leave these rows in our property data. */
 
 /* Change datatypes, add columns */
 
+SELECT 
+    state,		
+    city,			
+    street,				
+    price,				
+    bedrooms,				
+    bathrooms,				
+    CAST(acre_lot AS FLOAT64) AS acre_lot,			
+    CAST(house_size AS FLOAT64) AS house_size,				
+    CAST(CASE WHEN sold_date = '0' 
+             THEN NULL
+                 ELSE sold_date
+                     END AS DATE)
+FROM 
+    `myproject8888-357816.real_estate_us.re_us5`
+    
+
 /* Create second table only with not null values in the 'sold_date' column */
 
 CREATE OR REPLACE TABLE `myproject8888-357816.real_estate_us.re_us_sold`
