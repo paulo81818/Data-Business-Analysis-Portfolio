@@ -589,7 +589,8 @@ SELECT
     acre_lot*0.404686 AS hectare_lot,			
     house_size,
     house_size/10.7639 AS house_size_m2,				
-    sold_date
+    sold_date,
+    EXTRACT(YEAR FROM sold_date) AS year
 FROM 
     `myproject8888-357816.real_estate_us.re_us_property`
     
@@ -608,6 +609,7 @@ WHERE
 
 /* Create a table with plots of land. 
 But we need to do more exploration of this data to be sure that this table contains actual information about plots. */
+
 
 CREATE OR REPLACE TABLE
     `myproject8888-357816.real_estate_us.re_us_plots`
