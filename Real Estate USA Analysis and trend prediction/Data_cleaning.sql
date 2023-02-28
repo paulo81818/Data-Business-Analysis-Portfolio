@@ -560,8 +560,14 @@ SELECT
     price,				
     bedrooms,				
     bathrooms,				
-    CAST(acre_lot AS FLOAT64) AS acre_lot,			
-    CAST(house_size AS FLOAT64) AS house_size,				
+    CAST(CASE WHEN acre_lot = 0 
+             THEN NULL
+                 ELSE acre_lot
+                     END AS FLOAT64) AS acre_lot,			
+    CAST(CASE WHEN house_size = 0 
+             THEN NULL
+                 ELSE house_size
+                     END AS FLOAT64) AS house_size,				
     CAST(CASE WHEN sold_date = '0' 
              THEN NULL
                  ELSE sold_date
