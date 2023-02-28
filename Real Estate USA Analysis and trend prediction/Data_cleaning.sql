@@ -520,7 +520,8 @@ FROM
     `myproject8888-357816.real_estate_us.re_us_noduplicates`
 
 
-
+CREATE OR REPLACE TABLE `myproject8888-357816.real_estate_us.re_us_noduplicates`
+AS
 SELECT
     *
 FROM 
@@ -564,11 +565,29 @@ SELECT
     CAST(CASE WHEN sold_date = '0' 
              THEN NULL
                  ELSE sold_date
-                     END AS DATE)
+                     END AS DATE) AS sold_date
 FROM 
     `myproject8888-357816.real_estate_us.re_us5`
     
 
+CREATE OR REPLACE TABLE `myproject8888-357816.real_estate_us.re_us_property`
+AS
+SELECT   
+    state,		
+    city,			
+    street,				
+    price,				
+    bedrooms,				
+    bathrooms,				
+    acre_lot,
+    acre_lot*0.404686 AS hectare_lot,			
+    house_size,
+    house_size/10.7639 AS house_size_m2,				
+    sold_date
+FROM 
+    `myproject8888-357816.real_estate_us.re_us_property`
+    
+    
 /* Create second table only with not null values in the 'sold_date' column */
 
 CREATE OR REPLACE TABLE `myproject8888-357816.real_estate_us.re_us_sold`
@@ -581,7 +600,7 @@ WHERE
     sold_date IS NOT NULL
 
 
-/* Create a table with plots. 
+/* Create a table with plots of land. 
 But we need to do more exploration of this data to be sure that this table contains actual information about plots. */
 
 CREATE OR REPLACE TABLE
