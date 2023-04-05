@@ -224,6 +224,43 @@ ORDER BY
     num_of_property DESC 
  
 
+/* Explore data with null sold date */
+SELECT
+    state,
+    city,
+    bedrooms,
+    bathrooms,  
+    COUNT(state) AS num_of_property,
+    SUM(price) AS market_size,
+    AVG(price) AS avg_price,
+    MIN(price) AS min_price,
+    MAX(price) AS max_price,
+    AVG(house_size_m2) AS avg_size,
+    MIN(house_size_m2) AS min_size,
+    MAX(house_size_m2) AS max_size,
+    AVG(hectare_lot) AS avg_lot,
+    MIN(hectare_lot) AS min_lot,
+    MAX(hectare_lot) AS max_lot,   
+FROM 
+    `myproject8888-357816.real_estate_us.re_us_property`
+WHERE year IS NULL
+GROUP BY
+    state, city, bedrooms, bathrooms
+ORDER BY 
+    num_of_property DESC 
+    
+    
 
+/* Explore from lowest price */
+SELECT 
+    *  
+FROM 
+    `myproject8888-357816.real_estate_us.re_us_property`
+WHERE year IS NULL
+ORDER BY 
+    price ASC
 
-
+/* Part of the properties from the data are off-market right now, and part are still on sale. 
+It's now very useful for analysis: the data contains information about property on sale and already sold at an unknown time. 
+We can divide it just by manually checking. 
+There is no need to do such big work. We can additionally try to visualize the whole bunch of data in Power BI, maybe it will show something. */ 
