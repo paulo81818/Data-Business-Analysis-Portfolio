@@ -12,6 +12,7 @@ This repository was created to showcase my analytical and technical skills (Exce
 * [Portfolio Projects](#portfolio-projects)
   - [German cars data analysis](#german-cars-data-analysis) 
   - [Adidas US sales data analysis](#adidas-us-sales-data-analysis)
+  - [Real estate US SQL and Power BI analysis](#real-estate-us-sql-and-power-bi-analysis)
 * [Study projects](#study-projects)
   - [Python Data Analysis](#python-data-analysis)
   - [Excel Exercises](#excel-exercises)
@@ -45,6 +46,17 @@ This section contains a list of projects with brief descriptions.
 **Skills:** analytical thinking, data cleaning, data analysis, data vizualization.<br>
 **Hard skills:** Excel, Pivot Tables, Formulas, Functions, Charts, Dashboards, Slices, Pivot Charts.<br>
 **Results:** An analysis of financial data on the sale of Adidas products in the USA for 2020 and 2021 was performed. Reports and dashboard were created. 
+### Real estate US SQL and Power BI analysis 
+**Description:** The main goals of this project are to clean and explore data about real estate in the United States, group and prepare data for visualization in Power BI, and create comprehensive dashboards including interactive property stats, price calculator, that can count average prices by given parameters, and quantity of sold properties in different states and sales distribution among the year for effective data exploration.
+**Data cleaning and exploring SQL:**<a href = "https://github.com/paulo81818/Data-Business-Analysis-Portfolio/blob/main/Real%20Estate%20USA%20data%20SQL%20and%20Power%20BI%20analysis/Data_cleaning.sql">
+  <code>data_cleaning.sql</code></a> <a href = "https://github.com/paulo81818/Data-Business-Analysis-Portfolio/blob/main/Real%20Estate%20USA%20data%20SQL%20and%20Power%20BI%20analysis/Exploring_data.sql">
+  <code>data_exploration.sql</code></a><br> 
+**Power BI dashboards:** <a href = "https://github.com/paulo81818/Data-Business-Analysis-Portfolio/blob/main/Real%20Estate%20USA%20data%20SQL%20and%20Power%20BI%20analysis/Real%20Estate%20USA%20Dashboards.pbix">
+  <code>real-estate-dashboards.pbix</code></a> <a href = "https://github.com/paulo81818/Data-Business-Analysis-Portfolio/blob/main/Real%20Estate%20USA%20data%20SQL%20and%20Power%20BI%20analysis/Real%20Estate%20USA%20Dashboards.pdf">
+  <code>real-estate-dashboards.pdf</code></a><br>
+**Skills:** analytical thinking, data cleaning, data analysis, data vizualization<br>
+**Hard skills:** Bigquery SQL, Power BI, Dashboards <br>
+**Results:** Data was cleaned (which reduced the amount of data by about nine times), explored in Bigquery, imported into Power BI, transformed, and four dashboards were created.
 ## Study Projects
 ### Python Data Analysis
 **Repository:** <a href = "https://github.com/paulo81818/Study-Projects/tree/main/Data-Analysis-Python">
