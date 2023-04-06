@@ -47,15 +47,7 @@ This section contains a list of projects with brief descriptions.
 **Hard skills:** Excel, Pivot Tables, Formulas, Functions, Charts, Dashboards, Slices, Pivot Charts.<br>
 **Results:** An analysis of financial data on the sale of Adidas products in the USA for 2020 and 2021 was performed. Reports and dashboard were created. 
 ### Real estate US SQL and Power BI analysis 
-**Description:** The main goals of this project are:
-
-1) To clean the dataset from Kaggle about real estate in the United States using SQL,
-
-2) Explore data in Bigquery,
-
-3) Group and prepare data for visualization in Power BI,
-
-4) Create comprehensive dashboards, including interactive property stats, the price calculator that can count average prices by given parameters, and a dashboard that shows the quantity of sold properties in different states and the sales distribution among the months in the year for effective data exploration.
+**Description:** The main goals of this project are: <br> 1) To clean the dataset from Kaggle about real estate in the United States using SQL, <br>2) Explore data in Bigquery, <br> 3) Group and prepare data for visualization in Power BI, <br> 4) Create comprehensive dashboards, including interactive property stats, the price calculator that can count average prices by given parameters, and a dashboard that shows the quantity of sold properties in different states and the sales distribution among the months in the year for effective data exploration. <br>
 **Data cleaning and exploring SQL:**<a href = "https://github.com/paulo81818/Data-Business-Analysis-Portfolio/blob/main/Real%20Estate%20USA%20data%20SQL%20and%20Power%20BI%20analysis/Data_cleaning.sql">
   <code>data_cleaning.sql</code></a> <a href = "https://github.com/paulo81818/Data-Business-Analysis-Portfolio/blob/main/Real%20Estate%20USA%20data%20SQL%20and%20Power%20BI%20analysis/Exploring_data.sql">
   <code>data_exploration.sql</code></a><br> 
