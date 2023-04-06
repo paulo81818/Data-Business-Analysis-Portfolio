@@ -55,7 +55,7 @@ This section contains a list of projects with brief descriptions.
 
 3) Group and prepare data for visualization in Power BI,
 
-4) Create comprehensive dashboards, including interactive property stats, the price calculator that can count average prices by given parameters, and a dashboard that shows the quantity of sold properties in different states and the sales distribution among the months in the year for effective data exploration.<br>
+4) Create comprehensive dashboards, including interactive property stats, the price calculator that can count average prices by given parameters, and a dashboard that shows the quantity of sold properties in different states and the sales distribution among the months in the year for effective data exploration.
 **Data cleaning and exploring SQL:**<a href = "https://github.com/paulo81818/Data-Business-Analysis-Portfolio/blob/main/Real%20Estate%20USA%20data%20SQL%20and%20Power%20BI%20analysis/Data_cleaning.sql">
   <code>data_cleaning.sql</code></a> <a href = "https://github.com/paulo81818/Data-Business-Analysis-Portfolio/blob/main/Real%20Estate%20USA%20data%20SQL%20and%20Power%20BI%20analysis/Exploring_data.sql">
   <code>data_exploration.sql</code></a><br> 
