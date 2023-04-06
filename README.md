@@ -52,7 +52,7 @@ This section contains a list of projects with brief descriptions.
   <code>data_cleaning.sql</code></a> <a href = "https://github.com/paulo81818/Data-Business-Analysis-Portfolio/blob/main/Real%20Estate%20USA%20data%20SQL%20and%20Power%20BI%20analysis/Exploring_data.sql">
   <code>data_exploration.sql</code></a><br> 
 **Power BI dashboards:** <a href = "https://github.com/paulo81818/Data-Business-Analysis-Portfolio/blob/main/Real%20Estate%20USA%20data%20SQL%20and%20Power%20BI%20analysis/Real%20Estate%20USA%20Dashboards.pbix">
-  <code>real-estate-dashboards.pbix</code></a> <a href = "https://github.com/paulo81818/Data-Business-Analysis-Portfolio/blob/main/Real%20Estate%20USA%20data%20SQL%20and%20Power%20BI%20analysis/Real%20Estate%20USA%20Dashboards.pdf">
+  <code>real-estate-dashboards.pbix</code></a> <a href = "https://github.com/paulo81818/Data-Business-Analysis-Portfolio/blob/main/Real%20Estate%20USA%20data%20SQL%20and%20Power%20BI%20analysis/Real-Estate%20USA%20Dashboards.pdf">
   <code>real-estate-dashboards.pdf</code></a><br>
 **Skills:** analytical thinking, data cleaning, data analysis, data vizualization<br>
 **Hard skills:** Bigquery SQL, Power BI, Dashboards <br>
